@@ -1,0 +1,16 @@
+{
+  "name": "threejs-random-pixels",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "three": "^0.154.0",
+    "fastnoise-lite": "^1.1.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}

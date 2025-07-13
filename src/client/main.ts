@@ -7,8 +7,8 @@ import { createRandomTexture } from './texture.js';
 const scene = new THREE.Scene();
 
 // Camera (orthographic)
-let aspect = window.innerWidth / window.innerHeight;
-const viewSize = 1;
+let aspect: number = window.innerWidth / window.innerHeight;
+const viewSize: number = 1;
 const camera = new THREE.OrthographicCamera(
   -aspect * viewSize, aspect * viewSize,
    viewSize, -viewSize,
@@ -31,8 +31,8 @@ controls.target.set(0, 0, 0);
 controls.update();
 
 // Pixel quad: geometry matches resolution aspect so pixels stay square
-const texture = createRandomTexture(RESOLUTION.width, RESOLUTION.height);
-const resAspect = RESOLUTION.width / RESOLUTION.height;
+const texture: THREE.Texture = createRandomTexture(RESOLUTION.width, RESOLUTION.height);
+const resAspect: number = RESOLUTION.width / RESOLUTION.height;
 const geometry = new THREE.PlaneGeometry(resAspect * 2, 2);
 const material = new THREE.MeshBasicMaterial({ map: texture });
 const quad = new THREE.Mesh(geometry, material);
@@ -51,7 +51,7 @@ window.addEventListener('resize', () => {
 });
 
 // Animation loop
-(function animate() {
+(function animate(): void {
   requestAnimationFrame(animate);
   controls.update();
   renderer.render(scene, camera);

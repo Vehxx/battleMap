@@ -6,7 +6,7 @@ export function createRandomTexture(width, height) {
   const data = new Uint8Array(size);
   const noise = new FastNoiseLite();
 
-  noise.SetSeed(32487);
+  noise.SetSeed(2000);
   noise.SetNoiseType(FastNoiseLite.NoiseType.OpenSimplex2);
   noise.SetFractalOctaves(12);
   noise.SetFractalType(FastNoiseLite.FractalType.FBm);

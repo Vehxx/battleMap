@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start:server": "tsx src/server/wsServer.ts",
+    "start:client": "parcel index.html --open",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "build": "parcel build index.html"
   },
   "dependencies": {
     "fastnoise-lite": "^1.1.1",
-    "three": "^0.154.0"
+    "three": "^0.154.0",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "@types/three": "^0.178.1",
-    "parcel": "^2.9.3"
+    "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.0",
+    "parcel": "^2.9.3",
+    "tsx": "^4.20.3"
   }
 }
